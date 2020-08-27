@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h4>this displays your gender :<span id="displaygender"></span></h4>
+        <h4>this displays your birth year :<span id="displayYearOfBirth"></span></h4>
+        <h4>this displays your marital status:<span id="displayMaritalStatus"></span></h4>
+        <h4>this displays your retirement status :<span id="displayRetirementStatus"></span></h4>
+    </div>
+
+    <script type="text/javascript">
+            let gender = prompt("please enter your gender : male/female");
+            let request3 = 'male';
+            let request4 = "female";
+
+            gender == '' ? alert("please refresh and enter your gender : male/Female") :
+            gender == request3 ? document.getElementById('displaygender').innerHTML = request3 :
+            gender == request4 ? document.getElementById('displaygender').innerHTML = request4 :
+            alert("please refresh and enter your gender : male/Female")
+
+
+        
+        let yearOfBirth = parseInt(prompt("please enter your year of birth : numbers only", "YYYY"));
+        var age = 2020 - yearOfBirth; 
+        var ReYearsM = 60 - age;
+        var ReYearsS = 70 - age;
+        var reFYearsM = 55 - age;
+        var reFYearsS = 65 - age;
+            yearOfBirth =='' ? alert("please refresh and enter a valid year") :
+            (isNaN(yearOfBirth) ? alert("please refresh and enter a valid year") :
+            document.getElementById('displayYearOfBirth').innerHTML = age);
+        
+
+
+        let maritalStatus = prompt("please enter your marital status: married / single / divorced");
+        let request5 = 'married';
+        let request6 = 'single';
+        let request7 = 'divorced';
+
+            maritalStatus == ' ' ? alert("please refresh and enter your marital status: married / single / divorced") :
+            maritalStatus == request5 ? document.getElementById('displayMaritalStatus').innerHTML = request5 :
+            maritalStatus == request6 ? document.getElementById('displayMaritalStatus').innerHTML = request6 :
+            maritalStatus == request7 ? document.getElementById('displayMaritalStatus').innerHTML = request7 :
+            alert("please refresh and enter your marital status: married / single / divorced")
+
+
+
+
+      
+        gender == request3 && age <= 59 && maritalStatus == request5 ? document.getElementById('displayRetirementStatus').innerHTML = "you have " + ReYearsM +" remaining for retirement" :
+        gender == request3 && age >= 60 && maritalStatus == request5 ? document.getElementById('displayRetirementStatus').innerHTML = "you are "+ age +" and eligible for retirement":
+        gender == request3 && age <= 69 && maritalStatus == request6 || maritalStatus == request7 ? document.getElementById('displayRetirementStatus').innerHTML = "you have " + ReYearsS +" remaining for retirement" :   
+        gender == request3 && age >= 70 && maritalStatus == request6 || maritalStatus == request7 ? document.getElementById('displayRetirementStatus').innerHTML = "you are "+ age +" and eligible for retirement":
+        
+        // for female
+        gender == request4 && age <= 54 && maritalStatus == request5 ? document.getElementById('displayRetirementStatus').innerHTML = "you have" + ReFYearsM +" remaining for retirement" :
+        gender == request4 && age >= 55 && maritalStatus == request5 ? document.getElementById('displayRetirementStatus').innerHTML = "you are "+ age +" and eligible for retirement":
+        gender == request4 && age <= 64 && maritalStatus == request6 || maritalStatus == request7 ? document.getElementById('displayRetirementStatus').innerHTML = "you have " + ReFYearsS +" remaining for retirement" :
+        gender == request4 && age >= 65 && maritalStatus == request6 || maritalStatus == request7 ? document.getElementById('displayRetirementStatus').innerHTML = "you are "+ age +" and eligible for retirement":
+        alert('you should be at home');
+
+    </script>
+    
+</body>
+</html>
